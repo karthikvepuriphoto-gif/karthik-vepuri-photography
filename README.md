@@ -66,11 +66,13 @@ To feature a frame on the home page, add its path to `featuredIds` in the same f
 
 ## Films
 
-`src/data/films.ts` holds the highlight slots. Each entry has a `title` and a `url`. Leave `url` as an empty string and the slot stays off the page. When a film is ready, paste its YouTube link (`watch`, `youtu.be`, `shorts`, or `embed`). No channel is linked until those URLs are filled in.
+`src/data/films.ts` lists the highlight films and teasers. Each entry has a `title`, a YouTube `url`, and a `kind` of `highlight` or `teaser`. Set `portrait: true` for a vertical Short. The channel link is `youtube` in `src/data/site.ts`:
+
+https://www.youtube.com/@karthikmahendravepur
 
 ## Contact details
 
-Email and the Facebook page are in `src/data/site.ts`.
+Email, the YouTube channel, and the Facebook page are in `src/data/site.ts`.
 
 ```ts
 email: "hello@karthikvepuri.com"

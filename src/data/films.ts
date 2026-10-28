@@ -1,14 +1,44 @@
-/** Highlight films. Paste a YouTube watch, youtu.be, shorts, or embed URL into `url`.
- *  Leave `url` empty and the slot is not shown. */
-export type FilmSlot = {
+/** Highlight films from https://www.youtube.com/@karthikmahendravepur */
+export type Film = {
   title: string;
   url: string;
+  kind: "highlight" | "teaser";
+  /** Vertical Shorts use a portrait frame. Widescreen films stay 16:9. */
+  portrait?: boolean;
 };
 
-export const films: FilmSlot[] = [
-  { title: "Highlight 1", url: "" },
-  { title: "Highlight 2", url: "" },
-  { title: "Highlight 3", url: "" },
+export const films: Film[] = [
+  {
+    kind: "highlight",
+    title: "Manasa Weds Rohan || Full Highlights",
+    url: "https://www.youtube.com/watch?v=q_KBPYGIR_g",
+  },
+  {
+    kind: "highlight",
+    title: "Vikram Weds Haripriya Full Highlights",
+    url: "https://www.youtube.com/watch?v=uOxMDUbimGk",
+  },
+  {
+    kind: "highlight",
+    title: "Shruti Weds Reginald || Full Highlights",
+    url: "https://www.youtube.com/watch?v=3c2vJWnvS-I",
+  },
+  {
+    kind: "highlight",
+    title: "Alaina + Brandon || Wedding Highlights",
+    url: "https://www.youtube.com/watch?v=P_tXz3C5PD0",
+  },
+  {
+    kind: "teaser",
+    title: "Manasa+Rohan Wedding Teaser",
+    url: "https://www.youtube.com/watch?v=c7m9BcObJZ8",
+  },
+  {
+    kind: "teaser",
+    title: "Manasa ❤️ Rohan|| Save the Date (Short)",
+    url: "https://www.youtube.com/watch?v=JYD6Qz-XW8k",
+    portrait: true,
+  },
 ];
 
 /** Returns a nocookie embed URL, or null when the slot is empty or not a YouTube link. */

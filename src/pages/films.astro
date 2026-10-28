@@ -5,11 +5,14 @@ import { site } from "../data/site";
 import { url } from "../lib/url";
 
 const description =
-  "Highlight films by Karthik Vepuri, wedding photographer and filmmaker in Lincoln, Nebraska. Films are being added.";
+  "Wedding highlight films by Karthik Vepuri: Manasa and Rohan, Vikram and Haripriya, Shruti and Reginald, and Alaina and Brandon.";
+
 const ready = films.flatMap((film) => {
   const embed = youtubeEmbed(film.url);
   return embed ? [{ ...film, embed }] : [];
 });
+const highlights = ready.filter((film) => film.kind === "highlight");
+const teasers = ready.filter((film) => film.kind === "teaser");
 ---
 
 <Base title={`Highlights & Films · ${site.studio}`} description={description}>
@@ -19,43 +22,67 @@ const ready = films.flatMap((film) => {
         <p class="kicker">Video work</p>
         <h1 class="page-title">Highlights &amp; films</h1>
         <p class="lede">
-          Films of these days — ceremonies, families, and gatherings — are on the way.
+          Wedding films from the same days as the photographs — full highlights first, then a teaser and a short.
         </p>
       </header>
 
       <div class="films-stack">
-        {
-          ready.length > 0 && (
-            <section aria-labelledby="recent-heading">
-              <h2 class="embed-label" id="recent-heading">Highlights</h2>
-              <div class="shorts">
-                {ready.map((film) => (
-                  <article class="short">
-                    <div class="embed">
-                      <iframe
-                        src={film.embed}
-                        title={film.title}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                      />
-                    </div>
-                    <h3>{film.title}</h3>
-                    <a href={film.url} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
-                  </article>
-                ))}
-              </div>
-            </section>
-          )
-        }
+        <section aria-labelledby="highlights-heading">
+          <h2 class="embed-label" id="highlights-heading">Highlights</h2>
+          <div class="film-grid">
+            {
+              highlights.map((film, index) => (
+                <article class:list={["film-card", index === 0 && "is-lead"]}>
+                  <div class="embed">
+                    <iframe
+                      src={film.embed}
+                      title={film.title}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    />
+                  </div>
+                  <h3>{film.title}</h3>
+                  <a href={film.url} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+                </article>
+              ))
+            }
+          </div>
+        </section>
 
-        <section class="film-note" aria-labelledby="book-film">
-          <h2 id="book-film" class="page-title">A film for the day.</h2>
+        <section aria-labelledby="teasers-heading">
+          <h2 class="embed-label" id="teasers-heading">Teaser &amp; short</h2>
+          <div class="teaser-row">
+            {
+              teasers.map((film) => (
+                <article class:list={["film-card", film.portrait && "is-portrait"]}>
+                  <div class={film.portrait ? "short-frame" : "embed"}>
+                    <iframe
+                      src={film.embed}
+                      title={film.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    />
+                  </div>
+                  <h3>{film.title}</h3>
+                  <a href={film.url} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="film-note" aria-labelledby="more-films">
+          <h2 id="more-films" class="page-title">More on the channel.</h2>
           <p>
-            Highlight films are part of the work, alongside the still photographs. For a wedding or a celebration, write ahead of the day.
+            These are a few of the public films. The rest of the work is on YouTube.
           </p>
           <p>
+            <a href={site.youtube} rel="noopener noreferrer" target="_blank">Watch the channel on YouTube</a>
+            {" · "}
             <a href={url("contact/")}>Contact</a>
           </p>
         </section>

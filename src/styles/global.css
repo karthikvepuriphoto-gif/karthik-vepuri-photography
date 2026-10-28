@@ -1044,14 +1044,36 @@ select {
   border: 0;
 }
 
-.shorts {
+.film-grid,
+.teaser-row {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
+}
+
+.film-card h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.15;
+}
+
+.film-card a {
+  color: var(--ink);
 }
 
 @media (min-width: 800px) {
-  .shorts {
-    grid-template-columns: repeat(2, minmax(0, 380px));
+  .film-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .film-card.is-lead {
+    grid-column: 1 / -1;
+  }
+
+  .teaser-row {
+    grid-template-columns: minmax(0, 1.4fr) minmax(220px, 320px);
+    align-items: start;
   }
 }
 

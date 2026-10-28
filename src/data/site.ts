@@ -5,6 +5,7 @@ export const site = {
   email: "hello@karthikvepuri.com",
   facebook: "https://www.facebook.com/karthikvepuriphotography",
   facebookLabel: "Facebook",
+  youtube: "https://www.youtube.com/@karthikmahendravepur",
   description:
     "Wedding photographer and filmmaker in Lincoln, Nebraska. Indian and American weddings, maternity, children and family, couples, events, and highlight films.",
 } as const;
