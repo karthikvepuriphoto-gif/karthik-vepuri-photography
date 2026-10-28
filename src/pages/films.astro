@@ -1,12 +1,15 @@
 ---
 import Base from "../layouts/Base.astro";
-import { films } from "../data/films";
+import { films, youtubeEmbed } from "../data/films";
 import { site } from "../data/site";
 import { url } from "../lib/url";
 
 const description =
-  "Highlight films and moving pictures by Karthik Vepuri, wedding photographer and filmmaker in Lincoln, Nebraska.";
-const playlist = `https://www.youtube-nocookie.com/embed/videoseries?list=${site.youtubeUploadsPlaylist}`;
+  "Highlight films by Karthik Vepuri, wedding photographer and filmmaker in Lincoln, Nebraska. Films are being added.";
+const ready = films.flatMap((film) => {
+  const embed = youtubeEmbed(film.url);
+  return embed ? [{ ...film, embed }] : [];
+});
 ---
 
 <Base title={`Highlights & Films · ${site.studio}`} description={description}>
@@ -16,66 +19,44 @@ const playlist = `https://www.youtube-nocookie.com/embed/videoseries?list=${site
         <p class="kicker">Video work</p>
         <h1 class="page-title">Highlights &amp; films</h1>
         <p class="lede">
-          Moving pictures of the days in the galleries — ceremonies, families, and gatherings. The players below follow the public YouTube channel.
+          Films of these days — ceremonies, families, and gatherings — are on the way.
         </p>
       </header>
 
       <div class="films-stack">
-        <section aria-labelledby="recent-heading">
-          <h2 class="embed-label" id="recent-heading">Highlights</h2>
-          <div class="shorts">
-            {
-              films.map((film) => {
-                const watch = `https://www.youtube.com/watch?v=${film.id}`;
-                const embed = `https://www.youtube-nocookie.com/embed/${film.id}`;
-                return (
+        {
+          ready.length > 0 && (
+            <section aria-labelledby="recent-heading">
+              <h2 class="embed-label" id="recent-heading">Highlights</h2>
+              <div class="shorts">
+                {ready.map((film) => (
                   <article class="short">
-                    <div class="short-frame">
+                    <div class="embed">
                       <iframe
-                        src={embed}
-                        title={`${film.title} — Karthik Vepuri on YouTube`}
+                        src={film.embed}
+                        title={film.title}
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen
                       />
                     </div>
-                    <p>{film.label}</p>
                     <h3>{film.title}</h3>
-                    <a href={watch} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+                    <a href={film.url} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
                   </article>
-                );
-              })
-            }
-          </div>
-        </section>
-
-        <section aria-labelledby="uploads-heading">
-          <h2 class="embed-label" id="uploads-heading">All uploads</h2>
-          <div class="embed">
-            <iframe
-              src={playlist}
-              title="Karthik Vepuri YouTube uploads"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <p class="film-note">
-            <a href={site.youtube} rel="noopener noreferrer" target="_blank">Watch the channel on YouTube</a>
-          </p>
-        </section>
+                ))}
+              </div>
+            </section>
+          )
+        }
 
         <section class="film-note" aria-labelledby="book-film">
           <h2 id="book-film" class="page-title">A film for the day.</h2>
           <p>
-            Highlight films are part of the work, alongside the still photographs. If you want one for a wedding or a celebration, start with a note.
+            Highlight films are part of the work, alongside the still photographs. For a wedding or a celebration, write ahead of the day.
           </p>
           <p>
             <a href={url("contact/")}>Contact</a>
-            {" · "}
-            <a href={site.youtube} rel="noopener noreferrer" target="_blank">Karthik Vepuri on YouTube</a>
           </p>
         </section>
       </div>

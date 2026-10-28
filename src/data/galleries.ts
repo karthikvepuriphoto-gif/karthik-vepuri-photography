@@ -224,24 +224,6 @@ export const galleries: Gallery[] = [
         alt: "Two young children sit close together on a red backdrop scattered with confetti.",
       },
       {
-        file: "children-family/deepthi-family-01.jpg",
-        width: 2000,
-        height: 1333,
-        alt: "Extended family portrait outdoors, with people in silk sarees and formal clothes.",
-      },
-      {
-        file: "children-family/deepthi-family-02.jpg",
-        width: 2000,
-        height: 1333,
-        alt: "Extended family lined up on a lawn in colorful sarees and dress clothes.",
-      },
-      {
-        file: "children-family/sridhar-family-01.jpg",
-        width: 2000,
-        height: 1333,
-        alt: "A family walks a garden path beside stone sculptures.",
-      },
-      {
         file: "children-family/hasitha-fall-portrait-01.jpg",
         width: 2000,
         height: 1333,
