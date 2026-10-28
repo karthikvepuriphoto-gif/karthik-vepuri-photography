@@ -275,18 +275,6 @@ export const galleries: Gallery[] = [
         height: 1333,
         alt: "Family of three walks a brick alley, dressed in bright winter knits.",
       },
-      {
-        file: "maternity/maternity-old-beach-shoes.jpg",
-        width: 1851,
-        height: 1234,
-        alt: "Couple embracing beside a tree in the snow, he in a dark coat and she in black.",
-      },
-      {
-        file: "maternity/maternity-old-roses.jpg",
-        width: 2000,
-        height: 2000,
-        alt: "Close portrait of a woman holding up a mug that asks whether the ring makes her look engaged.",
-      },
     ],
   },
   {
@@ -434,6 +422,18 @@ export const galleries: Gallery[] = [
         width: 1333,
         height: 2000,
         alt: "Man kneels with a bouquet of roses before a woman in a purple dress.",
+      },
+      {
+        file: "couple-photography/couple-snow-embrace.jpg",
+        width: 1851,
+        height: 1234,
+        alt: "Couple embracing beside a snowy pine, he in a navy jacket and she in a black coat.",
+      },
+      {
+        file: "couple-photography/couple-engagement-mug.jpg",
+        width: 2000,
+        height: 2000,
+        alt: "Woman holds out a mug that asks whether the ring makes her look engaged.",
       },
       {
         file: "couple-photography/couple-03.jpg",
