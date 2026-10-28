@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { site } from "../data/site";
+
+const description = `Contact ${site.studio} in Lincoln, Nebraska. Email ${site.email} about weddings, sessions, and highlight films.`;
+---
+
+<Base title={`Contact · ${site.studio}`} description={description}>
+  <article class="page">
+    <div class="wrap">
+      <header class="page-intro">
+        <p class="kicker">Contact</p>
+        <h1 class="page-title">Write hello.</h1>
+        <p class="lede">
+          Tell me the day, the place, and what you want kept. Weddings, maternity, family, couples, events, and highlight films.
+        </p>
+      </header>
+      <ContactForm />
+    </div>
+  </article>
+</Base>
