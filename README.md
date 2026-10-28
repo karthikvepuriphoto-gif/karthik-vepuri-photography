@@ -66,9 +66,10 @@ To feature a frame on the home page, add its path to `featuredIds` in the same f
 
 ## Films
 
-`src/data/films.ts` lists the highlight films and teasers. Each entry has a `title`, a YouTube `url`, and a `kind` of `highlight` or `teaser`. Set `portrait: true` for a vertical Short. The channel link is `youtube` in `src/data/site.ts`:
+`src/data/films.ts` lists the films. Each entry has a `title`, a YouTube `url`, and a `kind` of `highlight`, `teaser`, or `short-film`. Set `portrait: true` for a vertical Short. Channel links are in `src/data/site.ts`:
 
-https://www.youtube.com/@karthikmahendravepur
+- Wedding highlights: https://www.youtube.com/@karthikmahendravepur
+- Short films: https://www.youtube.com/@karthikvepurishortfilms
 
 ## Contact details
 

@@ -1117,6 +1117,10 @@ select {
   color: var(--ink-soft);
 }
 
+p.film-note {
+  margin: 1rem 0 0;
+}
+
 .film-note a {
   color: var(--ink);
 }

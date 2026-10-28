@@ -1,8 +1,8 @@
-/** Highlight films from https://www.youtube.com/@karthikmahendravepur */
+/** Wedding highlights are from @karthikmahendravepur. Short films are from @karthikvepurishortfilms. */
 export type Film = {
   title: string;
   url: string;
-  kind: "highlight" | "teaser";
+  kind: "highlight" | "teaser" | "short-film";
   /** Vertical Shorts use a portrait frame. Widescreen films stay 16:9. */
   portrait?: boolean;
 };
@@ -27,6 +27,16 @@ export const films: Film[] = [
     kind: "highlight",
     title: "Alaina + Brandon || Wedding Highlights",
     url: "https://www.youtube.com/watch?v=P_tXz3C5PD0",
+  },
+  {
+    kind: "short-film",
+    title: "Friday - A Short Film by Karthik Vepuri",
+    url: "https://www.youtube.com/watch?v=QwtNG1CtqTw",
+  },
+  {
+    kind: "short-film",
+    title: "GD || Short Film",
+    url: "https://www.youtube.com/watch?v=phALNyRhqt8",
   },
   {
     kind: "teaser",

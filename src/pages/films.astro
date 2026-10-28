@@ -5,13 +5,14 @@ import { site } from "../data/site";
 import { url } from "../lib/url";
 
 const description =
-  "Wedding highlight films by Karthik Vepuri: Manasa and Rohan, Vikram and Haripriya, Shruti and Reginald, and Alaina and Brandon.";
+  "Wedding highlight films and short films by Karthik Vepuri, including Friday and GD, plus Manasa and Rohan, Vikram and Haripriya, Shruti and Reginald, and Alaina and Brandon.";
 
 const ready = films.flatMap((film) => {
   const embed = youtubeEmbed(film.url);
   return embed ? [{ ...film, embed }] : [];
 });
 const highlights = ready.filter((film) => film.kind === "highlight");
+const shortFilms = ready.filter((film) => film.kind === "short-film");
 const teasers = ready.filter((film) => film.kind === "teaser");
 ---
 
@@ -22,7 +23,7 @@ const teasers = ready.filter((film) => film.kind === "teaser");
         <p class="kicker">Video work</p>
         <h1 class="page-title">Highlights &amp; films</h1>
         <p class="lede">
-          Wedding films from the same days as the photographs — full highlights first, then a teaser and a short.
+          Wedding films from the same days as the photographs, then two short films.
         </p>
       </header>
 
@@ -49,6 +50,33 @@ const teasers = ready.filter((film) => film.kind === "teaser");
               ))
             }
           </div>
+        </section>
+
+        <section aria-labelledby="short-films-heading">
+          <h2 class="embed-label" id="short-films-heading">Short films</h2>
+          <div class="film-grid">
+            {
+              shortFilms.map((film) => (
+                <article class="film-card">
+                  <div class="embed">
+                    <iframe
+                      src={film.embed}
+                      title={film.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    />
+                  </div>
+                  <h3>{film.title}</h3>
+                  <a href={film.url} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+                </article>
+              ))
+            }
+          </div>
+          <p class="film-note">
+            <a href={site.youtubeShortFilms} rel="noopener noreferrer" target="_blank">More short films on YouTube</a>
+          </p>
         </section>
 
         <section aria-labelledby="teasers-heading">
@@ -78,10 +106,12 @@ const teasers = ready.filter((film) => film.kind === "teaser");
         <section class="film-note" aria-labelledby="more-films">
           <h2 id="more-films" class="page-title">More on the channel.</h2>
           <p>
-            These are a few of the public films. The rest of the work is on YouTube.
+            Wedding highlights are on one channel. Short films are on another.
           </p>
           <p>
-            <a href={site.youtube} rel="noopener noreferrer" target="_blank">Watch the channel on YouTube</a>
+            <a href={site.youtube} rel="noopener noreferrer" target="_blank">Wedding films on YouTube</a>
+            {" · "}
+            <a href={site.youtubeShortFilms} rel="noopener noreferrer" target="_blank">Short films on YouTube</a>
             {" · "}
             <a href={url("contact/")}>Contact</a>
           </p>
