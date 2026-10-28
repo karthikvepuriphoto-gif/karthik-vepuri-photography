@@ -1,0 +1,95 @@
+---
+import { site } from "../data/site";
+
+const occasions = [
+  "Indian wedding",
+  "American wedding",
+  "Maternity",
+  "Children & family",
+  "Couple session",
+  "Event",
+  "Highlight film",
+  "Something else",
+];
+---
+
+<div class="contact-block" id="contact">
+  <div class="contact-aside">
+    <p class="kicker">Contact</p>
+    <p>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+    <p>{site.location}</p>
+    <p>
+      <a href={site.youtube} rel="noopener noreferrer" target="_blank">YouTube</a><br />
+      <a href={site.facebook} rel="noopener noreferrer" target="_blank">Facebook</a>
+    </p>
+  </div>
+  <form class="form" action={`mailto:${site.email}`} method="post" enctype="text/plain" data-contact-form>
+    <div class="field">
+      <label>
+        <span>Name</span>
+        <input name="name" type="text" autocomplete="name" required />
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        <span>Email</span>
+        <input name="email" type="email" autocomplete="email" required />
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        <span>Occasion</span>
+        <select name="occasion">
+          {occasions.map((occasion) => <option value={occasion}>{occasion}</option>)}
+        </select>
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        <span>Date, if you have one</span>
+        <input name="date" type="text" autocomplete="off" />
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        <span>Message</span>
+        <textarea name="message" required></textarea>
+      </label>
+    </div>
+    <button class="btn btn-solid ink" type="submit">Write a message</button>
+    <p class="form-status" data-status role="status"></p>
+  </form>
+</div>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
+  const status = document.querySelector<HTMLElement>("[data-status]");
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const occasion = String(data.get("occasion") ?? "").trim();
+    const date = String(data.get("date") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+    const subject = `Photography inquiry from ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Occasion: ${occasion}`,
+      date ? `Date: ${date}` : null,
+      "",
+      message,
+    ]
+      .filter((line) => line !== null)
+      .join("\n");
+    const address = form.action.replace(/^mailto:/i, "").split("?")[0];
+    if (status) {
+      status.textContent = `Opening your email app, addressed to ${address}.`;
+    }
+    window.location.href = `mailto:${address}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+public/photos/w800/
+public/photos/w1400/
+.DS_Store
+*.log

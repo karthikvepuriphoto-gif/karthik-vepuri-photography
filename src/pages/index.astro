@@ -1,0 +1,141 @@
+---
+import Base from "../layouts/Base.astro";
+import { featuredIds, findPhoto, galleries, heroFile, photoSources } from "../data/galleries";
+import { site } from "../data/site";
+import { url } from "../lib/url";
+
+const hero = findPhoto(heroFile);
+const heroSrc = url(`photos/${hero.photo.file}`);
+const featured = featuredIds.map((file) => findPhoto(file));
+const base = import.meta.env.BASE_URL;
+---
+
+<Base
+  title={`${site.studio} · Lincoln, Nebraska`}
+  description={site.description}
+  ogImage={heroSrc}
+  ogAlt={hero.photo.alt}
+  home
+>
+  <section class="hero">
+    <img
+      src={heroSrc}
+      alt={hero.photo.alt}
+      width={hero.photo.width}
+      height={hero.photo.height}
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Lincoln, Nebraska</p>
+      <h1 class="hero-title">Karthik Vepuri</h1>
+      <p class="tagline">Color, ceremony, and the story in between.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#work">View the work</a>
+        <a class="btn btn-text" href={url("contact/")}>Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="statement-wrap" aria-label="Introduction">
+      <p class="statement">
+        Wedding photographer and filmmaker. Indian and American ceremonies, maternity, children and families, couples, and the milestones in between.
+      </p>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="selected-heading">
+      <div class="section-head">
+        <h2 id="selected-heading">Selected work</h2>
+        <p>Six photographs from the galleries.</p>
+      </div>
+      <div class="selected">
+        {
+          featured.map(({ photo, gallery }) => {
+            const sources = photoSources(photo, base);
+            const id = photo.file.split("/").pop()?.replace(/\.jpg$/i, "");
+            return (
+              <a class="shot" href={url(`${gallery.slug}/#${id}`)}>
+                <img
+                  src={sources.src}
+                  srcset={sources.srcset}
+                  sizes="(min-width: 860px) 46vw, 100vw"
+                  alt=""
+                  width={photo.width}
+                  height={photo.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="shot-meta">
+                  <span class="shot-cat">{gallery.title}</span>
+                  <span class="sr-only">{photo.alt}</span>
+                </span>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="galleries-heading">
+      <div class="section-head">
+        <h2 id="galleries-heading">Galleries</h2>
+      </div>
+      <div class="directory">
+        {
+          galleries.map((gallery, index) => {
+            const cover = photoSources(gallery.photos[0], base);
+            return (
+              <a class="dir" href={url(`${gallery.slug}/`)}>
+                <img
+                  src={cover.src}
+                  alt=""
+                  width={gallery.photos[0].width}
+                  height={gallery.photos[0].height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="dir-copy">
+                  <span class="dir-index">{String(index + 1).padStart(2, "0")}</span>
+                  <span class="dir-title">{gallery.title}</span>
+                  <span class="dir-intro">{gallery.intro}</span>
+                </span>
+                <span class="dir-go">View</span>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+  </div>
+
+  <section class="band" aria-labelledby="films-heading">
+    <div class="wrap">
+      <p class="kicker">Highlights &amp; films</p>
+      <h2 id="films-heading">The same days, in motion.</h2>
+      <p>Highlight films and other moving pictures from the YouTube channel.</p>
+      <div class="band-actions">
+        <a class="btn btn-solid" href={url("films/")}>Watch films</a>
+        <a class="btn btn-text" href={site.youtube} rel="noopener noreferrer" target="_blank">YouTube channel</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="split" aria-labelledby="about-heading">
+      <div>
+        <p class="kicker">About</p>
+        <h2 id="about-heading">Based in Lincoln.</h2>
+        <p>
+          Karthik photographs weddings, families, and milestone gatherings, and films the highlight of the day. For dates, write directly.
+        </p>
+      </div>
+      <div class="split-links">
+        <a class="quiet" href={url("about/")}>Read the bio</a>
+        <a class="quiet" href={`mailto:${site.email}`}>{site.email}</a>
+        <a class="btn btn-solid ink" href={url("contact/")}>Contact</a>
+      </div>
+    </section>
+  </div>
+</Base>

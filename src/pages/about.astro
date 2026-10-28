@@ -1,0 +1,38 @@
+---
+import Base from "../layouts/Base.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { site } from "../data/site";
+
+const description =
+  "Karthik Vepuri is a wedding photographer and filmmaker in Lincoln, Nebraska, working across Indian and American weddings, maternity, families, couples, and milestone events.";
+---
+
+<Base title={`About · ${site.studio}`} description={description}>
+  <article class="page">
+    <div class="wrap">
+      <header class="page-intro">
+        <p class="kicker">About</p>
+        <h1 class="page-title">Karthik Vepuri</h1>
+        <p class="lede">Wedding photographer and filmmaker in Lincoln, Nebraska.</p>
+      </header>
+      <div class="prose">
+        <p>
+          He photographs Indian and American weddings, maternity sessions, children and families, couples, and the cultural and milestone days that don’t sit in one category — half saree, seemantham, mehendi, housewarmings, graduations, and community gatherings.
+        </p>
+        <p>
+          Color leads. The story is whoever is standing in it: a ceremony under a mandap, a winter maternity portrait, a birthday, a couple at the door of a new house. Highlight videos come from that same attention.
+        </p>
+        <p>
+          He has volunteered as photographer and videographer for the IEEE EMC symposium.
+        </p>
+        <p>
+          He is the author of the children’s book <em>be Colorless</em>. On this site, the photographs come first.
+        </p>
+        <p>
+          Based in Lincoln, Nebraska. For a wedding date, a session, or a film, write <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+      </div>
+      <ContactForm />
+    </div>
+  </article>
+</Base>

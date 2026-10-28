@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://karthikvepuriphoto-gif.github.io/karthik-vepuri-photography/sitemap-index.xml

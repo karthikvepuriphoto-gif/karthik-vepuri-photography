@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import { galleries } from "../data/galleries";
+import { site } from "../data/site";
+import { url } from "../lib/url";
+---
+
+<Base title={`Page not found · ${site.studio}`} description="This page is not on the Karthik Vepuri Photography site.">
+  <article class="page">
+    <div class="wrap">
+      <header class="page-intro">
+        <p class="kicker">404</p>
+        <h1 class="page-title">This page has wandered off.</h1>
+        <p class="lede">The photograph you wanted may be in one of the galleries.</p>
+      </header>
+      <p><a href={url()}>Back to the home page</a></p>
+      <ul class="footer-nav">
+        {galleries.map((gallery) => (
+          <li><a href={url(`${gallery.slug}/`)}>{gallery.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,119 @@
+---
+import { galleries } from "../data/galleries";
+import { normalizePath, url } from "../lib/url";
+
+interface Props {
+  overlay?: boolean;
+}
+
+const { overlay = false } = Astro.props;
+const current = normalizePath(Astro.url.pathname);
+const items = [
+  ...galleries.map((gallery) => ({ href: `${gallery.slug}/`, label: gallery.nav })),
+  { href: "films/", label: "Films" },
+  { href: "about/", label: "About" },
+  { href: "contact/", label: "Contact" },
+];
+---
+
+<header class:list={["site-header", overlay && "is-overlay"]} data-header data-overlay={overlay ? "true" : "false"}>
+  <div class="header-top">
+    <a class="brand" href={url()}>
+      <span class="brand-name">Karthik Vepuri</span>
+      <span class="brand-sub">Photography</span>
+    </a>
+    <div class="header-tools">
+      <a class="header-contact" href={url("contact/")}>Contact</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle
+      >
+        Menu
+      </button>
+    </div>
+  </div>
+  <nav class="nav" id="site-nav" data-nav aria-label="Primary">
+    <ul class="nav-list">
+      {
+        items.map((item) => {
+          const href = url(item.href);
+          const active = normalizePath(href) === current;
+          return (
+            <li class:list={[item.label === "Contact" && "nav-contact-item"]}>
+              <a class="nav-link" href={href} aria-current={active ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>("[data-header]");
+  const nav = document.querySelector<HTMLElement>("[data-nav]");
+  const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+  if (!header || !nav || !toggle) {
+    throw new Error("Header markup missing.");
+  }
+
+  const overlay = header.dataset.overlay === "true";
+  const onScroll = () => {
+    if (!overlay) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  const links = () => [...nav.querySelectorAll<HTMLAnchorElement>("a")];
+
+  const setOpen = (open: boolean) => {
+    nav.classList.toggle("is-open", open);
+    header.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-lock", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.textContent = open ? "Close" : "Menu";
+    if (open) links()[0]?.focus();
+  };
+
+  toggle.addEventListener("click", () => {
+    setOpen(!nav.classList.contains("is-open"));
+  });
+
+  nav.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target instanceof HTMLAnchorElement) setOpen(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!nav.classList.contains("is-open")) return;
+    if (event.key === "Escape") {
+      setOpen(false);
+      toggle.focus();
+      return;
+    }
+    if (event.key !== "Tab") return;
+    const items = links();
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      toggle.focus();
+    } else if (event.shiftKey && document.activeElement === toggle) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      toggle.focus();
+    } else if (!event.shiftKey && document.activeElement === toggle) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+</script>
