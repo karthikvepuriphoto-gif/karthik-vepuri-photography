@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import { films, youtubeEmbed } from "../data/films";
+import { site } from "../data/site";
+
+const description =
+  "Short films by Karthik Vepuri: Friday, about a stranger's absence and a girl's decision to act, and GD, about managing gestational diabetes.";
+
+const features = films.flatMap((film) => {
+  if (film.kind !== "short-film") return [];
+  const embed = youtubeEmbed(film.url);
+  return embed ? [{ ...film, embed, paragraphs: film.paragraphs ?? [] }] : [];
+});
+---
+
+<Base title={`Short Films · ${site.studio}`} description={description}>
+  <article class="page">
+    <div class="wrap">
+      <header class="page-intro">
+        <p class="kicker">Short films</p>
+        <h1 class="page-title">Friday &amp; GD</h1>
+        <p class="lede">
+          Two films made apart from the wedding work. One began with a missing delivery driver. The other began at home.
+        </p>
+        <p class="meta-line">
+          <a href={site.youtubeShortFilms} rel="noopener noreferrer" target="_blank">@karthikvepurishortfilms on YouTube</a>
+        </p>
+      </header>
+
+      <div class="short-features">
+        {
+          features.map((film, index) => (
+            <article class="short-feature" id={index === 0 ? "friday" : "gd"}>
+              <div class="embed">
+                <iframe
+                  src={film.embed}
+                  title={film.title}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                />
+              </div>
+              <h2>{film.title}</h2>
+              <p>
+                <a href={film.url} rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+              </p>
+              <div class="prose">
+                {film.paragraphs.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <section class="film-note" aria-labelledby="short-channel">
+        <h2 id="short-channel" class="page-title">The short-film channel.</h2>
+        <p>
+          <a href={site.youtubeShortFilms} rel="noopener noreferrer" target="_blank">Watch more on YouTube</a>
+        </p>
+      </section>
+    </div>
+  </article>
+</Base>

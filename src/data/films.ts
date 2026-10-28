@@ -5,6 +5,7 @@ export type Film = {
   kind: "highlight" | "teaser" | "short-film";
   /** Vertical Shorts use a portrait frame. Widescreen films stay 16:9. */
   portrait?: boolean;
+  paragraphs?: string[];
 };
 
 export const films: Film[] = [
@@ -32,11 +33,22 @@ export const films: Film[] = [
     kind: "short-film",
     title: "Friday - A Short Film by Karthik Vepuri",
     url: "https://www.youtube.com/watch?v=QwtNG1CtqTw",
+    paragraphs: [
+      "The inspiration for this film began with a simple, unsettling question: What happened to John? He was a delivery driver who never missed a shift, yet one day during the pandemic, someone else showed up in his place. That small disruption lingered with me. We cross paths with strangers every day—on our commute, at the store, in the neighborhood—and without realizing it, they become part of the rhythm of our lives. When one of them suddenly disappears, even briefly, a quiet worry rises. We wonder where they are, whether they're safe, and what their absence means.",
+      "From that feeling, this story emerged.",
+      "I wanted to explore how easily a life can slip into danger unnoticed, and how a moment of awareness from another person can change everything. In the film, a young girl sees an elderly man in distress and chooses to act. Her decision is small, instinctive, and profoundly human. Yet it becomes the difference between life and loss.",
+      "Compassion is not grand or dramatic. It is often a single call, a single gesture, made at the right time. We may never know the private battles of the people we pass each day, but we can notice, care, and respond.",
+      "A call made in time can save a life. That truth is the heartbeat of this film.",
+    ],
   },
   {
     kind: "short-film",
     title: "GD || Short Film",
     url: "https://www.youtube.com/watch?v=phALNyRhqt8",
+    paragraphs: [
+      "In 2017, when my wife was pregnant with our first baby, she was diagnosed with Gestational Diabetes (GD). It was scary at the beginning—we never thought that this can be managed with the diet. When we successfully managed GD with diet, we decided to share our story with everyone. We want to give hope to people who are in a similar situation.",
+      "Special thanks to Vahini & Prithvi for volunteering to make this film happen.",
+    ],
   },
   {
     kind: "teaser",

@@ -1121,6 +1121,31 @@ p.film-note {
   margin: 1rem 0 0;
 }
 
+.short-features {
+  display: grid;
+  gap: clamp(3rem, 7vw, 5rem);
+}
+
+.short-feature h2 {
+  margin: 0.35rem 0 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.short-feature > p {
+  margin: 0;
+}
+
+.short-feature .prose {
+  margin-top: 0.35rem;
+}
+
+.page-intro .meta-line a {
+  color: var(--ink);
+}
+
 .film-note a {
   color: var(--ink);
 }
