@@ -275,6 +275,36 @@ export const galleries: Gallery[] = [
         height: 2000,
         alt: "Man kneels with a bouquet of roses before a woman in a purple dress.",
       },
+      {
+        file: "maternity/maternity-heart-hands-purple.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Expecting mother's hands form a heart over her belly in a purple dress.",
+      },
+      {
+        file: "maternity/maternity-baby-shoes-sneakers.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Tiny baby shoes set between the parents' sneakers in warm golden light.",
+      },
+      {
+        file: "maternity/maternity-purple-dress-porch.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "Smiling expecting mother in a purple dress on a white porch, one hand on her belly.",
+      },
+      {
+        file: "maternity/maternity-sunflower-belly-lace.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "A sunflower held against a pregnant belly in a magenta lace dress.",
+      },
+      {
+        file: "maternity/maternity-magenta-dress-road.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Expecting mother in a long magenta dress stands on an open road.",
+      },
     ],
   },
   {
@@ -672,6 +702,71 @@ export const galleries: Gallery[] = [
         width: 1333,
         height: 2000,
         alt: "Studio-style headshot of a man with glasses and a striped shirt.",
+      },
+    ],
+  },
+  {
+    slug: "landscapes",
+    title: "Landscapes",
+    nav: "Landscapes",
+    intro:
+      "Coastlines at sundown, mountain meadows, and skies full of stars.",
+    description:
+      "Landscape photography by Karthik Vepuri: sunsets, mountains, and night skies.",
+    photos: [
+      {
+        file: "landscapes/landscape-tidepool-sunset.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Sun setting over the ocean, reflected in a rocky tide pool under streaked clouds.",
+      },
+      {
+        file: "landscapes/landscape-sea-stacks-dusk.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Sea stacks silhouetted against a violet dusk sky over a misty, long-exposure shoreline.",
+      },
+      {
+        file: "landscapes/landscape-golden-sunset-rocks.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Blazing orange sunset over the sea with dark tide-pool rocks in the foreground.",
+      },
+      {
+        file: "landscapes/landscape-pier-twilight.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "A lit wooden pier stretches over the beach under a purple twilight sky.",
+      },
+      {
+        file: "landscapes/landscape-mountain-meadow-gate.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Stone gateway in a green meadow below rugged mountains and a deep blue sky.",
+      },
+      {
+        file: "landscapes/landscape-green-valley-clouds.jpg",
+        width: 2000,
+        height: 1125,
+        alt: "Green alpine valley with pine trees under bright white clouds.",
+      },
+      {
+        file: "landscapes/landscape-night-sky-meadow.jpg",
+        width: 1593,
+        height: 2000,
+        alt: "Star-filled night sky over a glowing grass ridge at the last light of dusk.",
+      },
+      {
+        file: "landscapes/landscape-milky-way-pillars.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "The Milky Way rising behind tall stone pillars at night.",
+      },
+      {
+        file: "landscapes/landscape-terrace-tree-monochrome.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Black-and-white view of an old tree over a terrace and distant hills.",
       },
     ],
   },

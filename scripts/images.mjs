@@ -14,6 +14,7 @@ const categories = [
   "couple-photography",
   "events",
   "portraits-headshots",
+  "landscapes",
 ];
 
 const catalogSrc = await readText(catalogPath);
