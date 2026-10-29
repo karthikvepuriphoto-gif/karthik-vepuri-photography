@@ -275,6 +275,12 @@ export const galleries: Gallery[] = [
         height: 1333,
         alt: "Family of three walks a brick alley, dressed in bright winter knits.",
       },
+      {
+        file: "maternity/maternity-roses-proposal.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "Man kneels with a bouquet of roses before a woman in a purple dress.",
+      },
     ],
   },
   {
@@ -416,12 +422,6 @@ export const galleries: Gallery[] = [
         width: 1333,
         height: 2000,
         alt: "Black-and-white silhouette of a couple face to face, foreheads nearly touching.",
-      },
-      {
-        file: "couple-photography/couple-05.jpg",
-        width: 1333,
-        height: 2000,
-        alt: "Man kneels with a bouquet of roses before a woman in a purple dress.",
       },
       {
         file: "couple-photography/couple-snow-embrace.jpg",
