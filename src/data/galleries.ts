@@ -424,12 +424,6 @@ export const galleries: Gallery[] = [
         height: 2000,
         alt: "Baby in white sits with a small cake marked with the number 1, against a red backdrop with flowers.",
       },
-      {
-        file: "children-family/v1-kids-fall-tree-jump.jpg",
-        width: 2000,
-        height: 1333,
-        alt: "Boy jumps with his arms out under a red-leafed tree in a yard full of fallen leaves.",
-      },
     ],
   },
   {
