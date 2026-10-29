@@ -52,6 +52,7 @@ Curated JPEGs live in `public/photos/`, one folder per gallery:
 | Couple Photography | `public/photos/couple-photography/` |
 | Events | `public/photos/events/` |
 | Portraits | `public/photos/portraits-headshots/` |
+| Landscapes | `public/photos/landscapes/` |
 
 `portraits-headshots/` from the source set is not a separate page. The fall portrait is in Children & Family. The graduation candle detail is in Events. A duplicate of the dental-graduation cookies was already in Events and was not added twice.
 
