@@ -240,6 +240,12 @@ export const galleries: Gallery[] = [
         alt: "Pregnant woman in a flowing champagne gown stands in a snowy evergreen path at golden hour, hands resting on her belly.",
       },
       {
+        file: "maternity/maternity-blue-saree-columns.jpg",
+        width: 1600,
+        height: 2000,
+        alt: "Expecting mother in a royal blue silk saree reclines before stone columns under a dramatic sky.",
+      },
+      {
         file: "maternity/maternity-hasitha-02.jpg",
         width: 1333,
         height: 2000,
@@ -316,12 +322,6 @@ export const galleries: Gallery[] = [
         width: 1333,
         height: 2000,
         alt: "Husband holds his wife's belly as she stands in a red gown at sunset.",
-      },
-      {
-        file: "maternity/maternity-blue-saree-columns.jpg",
-        width: 1600,
-        height: 2000,
-        alt: "Expecting mother in a royal blue silk saree reclines before stone columns under a dramatic sky.",
       },
       {
         file: "maternity/maternity-blue-saree-golden-field.jpg",
