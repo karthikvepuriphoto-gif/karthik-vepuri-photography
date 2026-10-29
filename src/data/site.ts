@@ -2,7 +2,7 @@ export const site = {
   name: "Karthik Vepuri",
   studio: "Karthik Vepuri Photography",
   location: "Lincoln, Nebraska",
-  email: "hello@karthikvepuri.com",
+  email: "karthikvepuriphoto@gmail.com",
   facebook: "https://www.facebook.com/karthikvepuriphotography",
   facebookLabel: "Facebook",
   youtube: "https://www.youtube.com/@karthikmahendravepur",

@@ -80,7 +80,7 @@ Friday and GD include the filmmaker’s notes in `paragraphs` on those entries.
 Email, the YouTube channel, and the Facebook page are in `src/data/site.ts`.
 
 ```ts
-email: "hello@karthikvepuri.com"
+email: "karthikvepuriphoto@gmail.com"
 ```
 
 Change that string to replace the address everywhere: the mailto links, the contact form, and the footer. The form opens the visitor’s email app. It does not store messages.
