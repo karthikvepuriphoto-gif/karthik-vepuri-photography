@@ -773,7 +773,7 @@ export const featuredIds = [
   "maternity/maternity-hasitha-02.jpg",
   "children-family/kids-krishna-01.jpg",
   "american-weddings/american-05.jpg",
-  "american-weddings/american-04.jpg",
+  "events/events-04-solo-dancer.jpg",
   "couple-photography/couple-19.jpg",
 ];
 
