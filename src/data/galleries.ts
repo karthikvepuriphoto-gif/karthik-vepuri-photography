@@ -764,6 +764,65 @@ export const galleries: Gallery[] = [
       },
     ],
   },
+  {
+    slug: "street-photography",
+    title: "Street Photography",
+    nav: "Street",
+    intro:
+      "Unposed portraits of strangers met along the way, in colour and black and white.",
+    description:
+      "Street photography by Karthik Vepuri: candid portraits in colour and black and white.",
+    photos: [
+      {
+        file: "street-photography/street-bearded-man-closeup-bw.jpg",
+        width: 2000,
+        height: 2000,
+        alt: "Black-and-white close-up of a weathered man with a long white beard and a wide-brimmed hat, staring into the lens.",
+      },
+      {
+        file: "street-photography/street-bearded-man-closeup-golden.jpg",
+        width: 2000,
+        height: 2000,
+        alt: "Warm golden-light close-up of a bearded man in a bucket hat, his blue eyes catching the light.",
+      },
+      {
+        file: "street-photography/street-bearded-man-garden.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "A shirtless man with a long white beard and sun hat stands against green garden foliage.",
+      },
+      {
+        file: "street-photography/street-bearded-man-garden-bw.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "Black-and-white portrait of the bearded man standing before leafy branches.",
+      },
+      {
+        file: "street-photography/street-bearded-man-tree-glow.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "The bearded man framed by glowing, tangled tree branches at golden hour.",
+      },
+      {
+        file: "street-photography/street-car-window-bw.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Black-and-white frame of the bearded man seen through an open car window and door frame.",
+      },
+      {
+        file: "street-photography/street-bearded-man-blue-sky.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "The bearded man in his hat against a soft blue sky and green trees.",
+      },
+      {
+        file: "street-photography/street-bearded-man-parking-lot.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "The bearded man standing beside parked cars, his beard lit by soft backlight.",
+      },
+    ],
+  },
 ];
 
 export const heroFile = "maternity/maternity-hasitha-03.jpg";
