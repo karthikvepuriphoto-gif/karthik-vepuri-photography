@@ -828,6 +828,12 @@ export const galleries: Gallery[] = [
       "Street photography by Karthik Vepuri: candid portraits in colour and black and white.",
     photos: [
       {
+        file: "street-photography/street-red-umbrella-gothic-church.jpg",
+        width: 2000,
+        height: 1500,
+        alt: "Silhouetted figure with a bright red umbrella walking in front of a towering gothic church.",
+      },
+      {
         file: "street-photography/street-marigold-garland-seller.jpg",
         width: 2000,
         height: 1333,
@@ -910,6 +916,18 @@ export const galleries: Gallery[] = [
         width: 1920,
         height: 1920,
         alt: "Black-and-white graduate in cap and gown checks his phone alone among rows of empty folding chairs.",
+      },
+      {
+        file: "street-photography/street-woman-floral-dress-stairs-bw.jpg",
+        width: 1333,
+        height: 2000,
+        alt: "Black-and-white woman in a floral dress climbing a dark stairway.",
+      },
+      {
+        file: "street-photography/street-couple-walkway-lamps-bw.jpg",
+        width: 2000,
+        height: 1499,
+        alt: "Black-and-white couple on an elevated walkway above rows of hanging lamps.",
       },
     ],
   },
