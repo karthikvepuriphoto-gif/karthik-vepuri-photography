@@ -828,28 +828,28 @@ export const galleries: Gallery[] = [
       "Street photography by Karthik Vepuri: candid portraits in colour and black and white.",
     photos: [
       {
+        file: "street-photography/street-marigold-garland-seller.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "An elderly man in a checked scarf stands between hanging strings of bright yellow and orange marigold garlands at a market.",
+      },
+      {
+        file: "street-photography/street-market-woman-smile.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "A smiling woman in a green sari with a red bindi looks into the camera at a busy vegetable market.",
+      },
+      {
         file: "street-photography/street-bearded-man-closeup-bw.jpg",
         width: 2000,
         height: 2000,
         alt: "Black-and-white close-up of a weathered man with a long white beard and a wide-brimmed hat, staring into the lens.",
       },
       {
-        file: "street-photography/street-bearded-man-closeup-golden.jpg",
+        file: "street-photography/street-boy-green-beans.jpg",
         width: 2000,
         height: 2000,
-        alt: "Warm golden-light close-up of a bearded man in a bucket hat, his blue eyes catching the light.",
-      },
-      {
-        file: "street-photography/street-bearded-man-garden.jpg",
-        width: 1333,
-        height: 2000,
-        alt: "A shirtless man with a long white beard and sun hat stands against green garden foliage.",
-      },
-      {
-        file: "street-photography/street-bearded-man-garden-bw.jpg",
-        width: 1333,
-        height: 2000,
-        alt: "Black-and-white portrait of the bearded man standing before leafy branches.",
+        alt: "A grinning boy in a grey T-shirt holds up a bunch of long green beans in a crowded market.",
       },
       {
         file: "street-photography/street-bearded-man-tree-glow.jpg",
@@ -858,22 +858,22 @@ export const galleries: Gallery[] = [
         alt: "The bearded man framed by glowing, tangled tree branches at golden hour.",
       },
       {
+        file: "street-photography/street-vendor-blue-shutters.jpg",
+        width: 2000,
+        height: 2000,
+        alt: "A woman in a blue sari sorts vegetables at her stall in front of bright blue folding metal shutters.",
+      },
+      {
         file: "street-photography/street-car-window-bw.jpg",
         width: 2000,
         height: 1333,
         alt: "Black-and-white frame of the bearded man seen through an open car window and door frame.",
       },
       {
-        file: "street-photography/street-bearded-man-blue-sky.jpg",
+        file: "street-photography/street-fruit-vendor.jpg",
         width: 2000,
         height: 1333,
-        alt: "The bearded man in his hat against a soft blue sky and green trees.",
-      },
-      {
-        file: "street-photography/street-bearded-man-parking-lot.jpg",
-        width: 1333,
-        height: 2000,
-        alt: "The bearded man standing beside parked cars, his beard lit by soft backlight.",
+        alt: "A bearded fruit seller in a khaki shirt and white cap stands behind piles of dark grapes and red apples.",
       },
     ],
   },
