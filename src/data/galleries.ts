@@ -246,28 +246,10 @@ export const galleries: Gallery[] = [
         alt: "Pregnant woman in a champagne gown stands among snowy evergreens, one hand on her belly.",
       },
       {
-        file: "maternity/maternity-hasitha-family-03.jpg",
-        width: 1333,
-        height: 2000,
-        alt: "Family of three sits on a brick ledge in front of a locomotive mural, the mother in a red beanie and color-block sweater.",
-      },
-      {
-        file: "maternity/maternity-hasitha-family-02.jpg",
-        width: 1333,
-        height: 2000,
-        alt: "Pregnant woman in a bright color-block sweater hugs a small child wearing a striped beanie.",
-      },
-      {
         file: "maternity/maternity-hasitha-with-son-tracks.jpg",
         width: 1333,
         height: 2000,
         alt: "Pregnant woman and her son hold hands on railroad tracks beside a station platform.",
-      },
-      {
-        file: "maternity/maternity-hasitha-family-alley.jpg",
-        width: 2000,
-        height: 1333,
-        alt: "Family of three walks a brick alley, dressed in bright winter knits.",
       },
       {
         file: "maternity/maternity-roses-proposal.jpg",
