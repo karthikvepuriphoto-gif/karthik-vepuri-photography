@@ -11,6 +11,11 @@ export type Film = {
 export const films: Film[] = [
   {
     kind: "highlight",
+    title: "Siri + Santosh Wedding Highlights",
+    url: "https://www.youtube.com/watch?v=eEAJSIgEx0Q",
+  },
+  {
+    kind: "highlight",
     title: "Manasa Weds Rohan || Full Highlights",
     url: "https://www.youtube.com/watch?v=q_KBPYGIR_g",
   },
